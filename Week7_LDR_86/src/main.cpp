@@ -7,7 +7,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define LDR_PIN 34
+#define LDR_PIN 2
 #define SDA_PIN 21
 #define SCL_PIN 22
 #define SCREEN_WIDTH 128
