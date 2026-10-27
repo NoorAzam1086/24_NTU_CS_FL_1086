@@ -7,7 +7,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define LDR_PIN 2
+#define LDR_PIN 4
 #define SDA_PIN 21
 #define SCL_PIN 22
 #define SCREEN_WIDTH 128
@@ -28,10 +28,21 @@ void loop() {
   float voltage = (adcValue / 4095.0) * 3.3;
 
   display.clearDisplay();
-  display.setTextSize(1);
-  display.setCursor(0,10);
-  display.print("LDR ADC: "); display.println(adcValue);
-  display.print("Voltage: "); display.print(voltage, 2); display.println(" V");
+   // Peela hissa: title
+  display.setTextSize(2);
+  display.setCursor(0, 0);
+  display.print("LDR Sensor");
+
+  // Neela hissa: ADC value
+  display.setCursor(0, 22);
+  display.print("ADC:");
+  display.print(adcValue);
+
+  // Neela hissa: voltage
+  display.setCursor(0, 44);
+  display.print("V:");
+  display.print(voltage, 2);
+  display.print("V");
   display.display();
 
   Serial.printf("ADC: %d  |  Voltage: %.2f V\n", adcValue, voltage);
